@@ -2,7 +2,7 @@
 
 namespace Music.BL.Interfaces
 {
-    internal interface IDataWriterService
+    public interface IDataWriterService
     {
         void WriteSongs(IEnumerable<LibrarySong> songs);
     }

@@ -78,9 +78,6 @@ internal class AppleMusicRepo(IHttpClientFactory httpClientFactory) : IMusicRepo
             var tasks = batch.Select(url => _httpClient.GetStringAsync(url));
             var batchResults = await Task.WhenAll(tasks);
             results.AddRange(batchResults);
-
-            // Optional: short delay to avoid HTTP 429
-            await Task.Delay(120);
         }
 
         foreach (var jsonString in results.Skip(1))

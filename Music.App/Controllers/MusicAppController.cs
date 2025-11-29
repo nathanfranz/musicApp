@@ -16,10 +16,11 @@ namespace Music.App.Controllers;
 /// <param name="logger">Logger instance for logging.</param>
 [ApiController]
 [Route("api/[controller]")]
-public class MusicAppController(IMusicServiceFactory musicServiceFactory, IConfiguration config, ILogger<MusicAppController> logger) : ControllerBase
+public class MusicAppController(
+    Service service, 
+    IConfiguration config, 
+    ILogger<MusicAppController> logger) : ControllerBase
 {
-    private readonly Service service = new(DL.Models.MusicServiceType.Apple, musicServiceFactory);
-
     /// <summary>
     /// Get Apple Music Library Songs in Excel format.
     /// </summary>

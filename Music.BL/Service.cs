@@ -3,9 +3,9 @@ using Music.DL.Models;
 
 namespace Music.BL;
 
-public class Service(MusicServiceType musicServiceType, IMusicServiceFactory musicServiceFactory)
+public class Service(IMusicServiceFactory musicServiceFactory, IDataWriterService dataWriter)
 {
-    private readonly IMusicService musicService = musicServiceFactory.GetService(musicServiceType);
+    private readonly IMusicService musicService = musicServiceFactory.GetService(MusicServiceType.Apple);
 
     public string GetDeveloperToken()
     {
@@ -15,6 +15,8 @@ public class Service(MusicServiceType musicServiceType, IMusicServiceFactory mus
     public async Task<IEnumerable<LibrarySong>> DoStuff(string userToken)
     {
         var library = await musicService.GetLibraryAsync(userToken);
+
+        dataWriter.WriteSongs(library);
 
         return library;
     }

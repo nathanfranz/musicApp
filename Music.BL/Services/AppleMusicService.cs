@@ -23,8 +23,10 @@ internal class AppleMusicService(IMusicRepoFactory musicRepoFactory, IConfigurat
     public async Task<IEnumerable<LibrarySong>> GetLibraryAsync(string userToken)
     {
         var library = await appleMusicRepo.GetLibraryAsync(userToken, DeveloperToken);
+        
+        var orderedLibrary = library.OrderBy(s => s.Artist).ThenBy(s => s.Name);
 
-        return library;
+        return orderedLibrary;
     }
 
     internal string GenerateDeveloperToken()

@@ -70,4 +70,7 @@ local.settings.json
 wwwroot/
 
 # Exclude certs
-certs/
+certs/*.p8
+
+# Exclude data
+data/*.db
