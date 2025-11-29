@@ -1,0 +1,73 @@
+# Ignore build output directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Visual Studio specific
+.vs/
+.vscode/
+.idea/
+
+# Dependency directories
+packages/
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Application Insights
+ApplicationInsights.config
+
+# Rider IDE files
+.idea/
+*.sln.iml
+
+# Resharper files
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Azure Functions
+local.settings.json
+
+# Dotnet specific
+*.swp
+*.lock.json
+*.lock
+*.pidb
+*.pdb
+*.mdb
+*.ilk
+*.obj
+*.idb
+*.tlog
+*.log
+*.vspscc
+*.vssscc
+*.orig
+*.userprefs
+*.csproj.user
+*.dbmdl
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+
+# Exclude publish output
+wwwroot/
+
+# Exclude certs
+certs/
