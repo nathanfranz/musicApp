@@ -1,11 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.DL", "Music.DL\Music.DL.csproj", "{67F6D542-C927-4C01-A2C1-15AB46AE762D}"
@@ -13,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.App", "Music.App\Music.App.csproj", "{2639395C-3CA4-4CB8-8312-ABF9E73B745E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Music.BL", "Music.BL\Music.BL.csproj", "{40A8F1E0-35FF-4D3B-B8FE-02B0A6742674}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7A0C318C-B4D2-4EB7-89D9-2B2FD968FAEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL.Tests.Integration", "tests\DL.Tests.Integration\DL.Tests.Integration.csproj", "{1B508D73-8A6F-4F77-85C7-941257A7CF5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +37,16 @@ Global
 		{40A8F1E0-35FF-4D3B-B8FE-02B0A6742674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40A8F1E0-35FF-4D3B-B8FE-02B0A6742674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40A8F1E0-35FF-4D3B-B8FE-02B0A6742674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B508D73-8A6F-4F77-85C7-941257A7CF5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B508D73-8A6F-4F77-85C7-941257A7CF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B508D73-8A6F-4F77-85C7-941257A7CF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B508D73-8A6F-4F77-85C7-941257A7CF5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1B508D73-8A6F-4F77-85C7-941257A7CF5A} = {7A0C318C-B4D2-4EB7-89D9-2B2FD968FAEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {86CAB432-C4BF-4312-8FBF-2A7998C2ADB4}
