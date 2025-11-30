@@ -4,6 +4,6 @@ namespace Music.BL.Interfaces
 {
     public interface IDataWriterService
     {
-        void WriteSongs(IEnumerable<LibrarySong> songs);
+        void WriteSongs(IEnumerable<Song> songs);
     }
 }

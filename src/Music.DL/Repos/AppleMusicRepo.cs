@@ -1,7 +1,6 @@
 ﻿using Music.DL.Interfaces;
 using Music.DL.Models;
 using System.Text.Json.Nodes;
-using System.Linq;
 
 namespace Music.DL.Repos;
 
@@ -13,11 +12,11 @@ internal class AppleMusicRepo(IHttpClientFactory httpClientFactory) : IMusicRepo
 
     private readonly HttpClient _httpClient = httpClientFactory.CreateClient(ClientName);
 
-    public async Task<IEnumerable<LibrarySong>> GetLibraryAsync(string userToken, string developerToken)
+    public async Task<IEnumerable<Song>> GetLibraryAsync(string userToken, string developerToken)
     {
         var allSongsData = await FetchAllSongsParallelAsync(developerToken, userToken);
 
-        var allSongs = new List<LibrarySong>();
+        var allSongs = new List<Song>();
         foreach (var songItem in allSongsData)
         {
             var attributes = songItem["attributes"];
@@ -25,9 +24,9 @@ internal class AppleMusicRepo(IHttpClientFactory httpClientFactory) : IMusicRepo
             if (attributes == null)
                 continue;
 
-            var song = new LibrarySong
+            var song = new Song
             {
-                Name = attributes["name"]?.GetValue<string>() ?? string.Empty,
+                Title = attributes["name"]?.GetValue<string>() ?? string.Empty,
                 Artist = attributes["artistName"]?.GetValue<string>() ?? string.Empty
             };
 

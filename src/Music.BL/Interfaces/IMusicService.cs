@@ -6,5 +6,5 @@ public interface IMusicService
 {
     string DeveloperToken { get; set; }
 
-    Task<IEnumerable<LibrarySong>> GetLibraryAsync(string userToken);
+    Task<IEnumerable<Song>> GetLibraryAsync(string userToken);
 }

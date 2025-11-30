@@ -10,7 +10,7 @@ namespace Music.BL.Services;
 
 internal class AppleMusicService(IMusicRepoFactory musicRepoFactory, IConfiguration configuration) : IMusicService
 {
-    private readonly IMusicRepo appleMusicRepo = musicRepoFactory.GetService(DL.Models.MusicServiceType.Apple);
+    private readonly IMusicRepo appleMusicRepo = musicRepoFactory.GetService(MusicServiceType.Apple);
 
     private string? _developerToken = null;
 
@@ -20,11 +20,11 @@ internal class AppleMusicService(IMusicRepoFactory musicRepoFactory, IConfigurat
         set => _developerToken = value;
     }
 
-    public async Task<IEnumerable<LibrarySong>> GetLibraryAsync(string userToken)
+    public async Task<IEnumerable<Song>> GetLibraryAsync(string userToken)
     {
         var library = await appleMusicRepo.GetLibraryAsync(userToken, DeveloperToken);
         
-        var orderedLibrary = library.OrderBy(s => s.Artist).ThenBy(s => s.Name);
+        var orderedLibrary = library.OrderBy(s => s.Artist).ThenBy(s => s.Title);
 
         return orderedLibrary;
     }

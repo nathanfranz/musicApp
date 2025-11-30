@@ -4,5 +4,5 @@ namespace Music.DL.Interfaces;
 
 public interface IMusicRepo
 {
-    Task<IEnumerable<LibrarySong>> GetLibraryAsync(string userToken, string developerToken);
+    Task<IEnumerable<Song>> GetLibraryAsync(string userToken, string developerToken);
 }

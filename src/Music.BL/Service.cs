@@ -12,7 +12,7 @@ public class Service(IMusicServiceFactory musicServiceFactory, IDataWriterServic
         return musicService.DeveloperToken;
     }
 
-    public async Task<IEnumerable<LibrarySong>> DoStuff(string userToken)
+    public async Task<IEnumerable<Song>> DoStuff(string userToken)
     {
         var library = await musicService.GetLibraryAsync(userToken);
 

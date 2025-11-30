@@ -74,3 +74,4 @@ certs/*.p8
 
 # Exclude data
 data/*.db
+tests/data/*.db

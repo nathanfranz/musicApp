@@ -7,7 +7,7 @@ namespace Music.BL.Services
 {
     internal class ExcelWriterService : IDataWriterService
     {
-        public void WriteSongs(IEnumerable<LibrarySong> songs)
+        public void WriteSongs(IEnumerable<Song> songs)
         {
             string folderPath = @"D:\Documents\MusicLibrary";
 
@@ -21,7 +21,7 @@ namespace Music.BL.Services
             stream.CopyTo(fileStream);
         }
 
-        public static MemoryStream CreateExcelStream(IEnumerable<LibrarySong> songs)
+        public static MemoryStream CreateExcelStream(IEnumerable<Song> songs)
         {
             ExcelPackage.License.SetNonCommercialPersonal("Nate");
 
@@ -39,7 +39,7 @@ namespace Music.BL.Services
                 int row = 2;
                 foreach (var song in songs)
                 {
-                    ws.Cells[row, 1].Value = song.Name;
+                    ws.Cells[row, 1].Value = song.Title;
                     ws.Cells[row, 2].Value = song.Artist;
                     ws.Cells[row, 3].Value = song.Album;
                     row++;
